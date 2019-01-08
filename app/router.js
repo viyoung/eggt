@@ -9,4 +9,6 @@ module.exports = app => {
   router.post('/add', controller.user.add);
   router.post('/removeUser', controller.user.removeUser);
   router.post('/update', controller.user.update);
+  router.post('/personAdd', controller.person.add);
+  router.post('/titleGetAuthor', controller.person.titleGetAuthor);
 };
