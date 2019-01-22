@@ -43,10 +43,10 @@ class PersonService extends Service {
   async findUserName(name) {
     const ctx = this.ctx;
     return ctx.model.Person.find({ name }).then(res => {
-      console.log(res);
+      ctx.logger.debug('debug info from service:' + res);
       return res;
     }).catch(err => {
-      console.log(err);
+      ctx.logger.debug('debug info from service:' + err);
       return false;
     });
   }
