@@ -6,3 +6,7 @@ exports.mongoose = {
   enabled: true,
   package: 'egg-mongoose',
 };
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};

@@ -11,4 +11,6 @@ module.exports = app => {
   router.post('/update', controller.user.update);
   router.post('/personAdd', controller.person.add);
   router.post('/titleGetAuthor', controller.person.titleGetAuthor);
+  router.post('/login', controller.login.login);
+  router.post('/register', controller.register.register);
 };

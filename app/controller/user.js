@@ -19,7 +19,7 @@ class UserController extends Controller {
       gender,
       hobby,
     };
-    const isHave = await ctx.service.post.findUserName(name);
+    const isHave = await ctx.service.register.findUserName(name);
     if (isHave && isHave.length > 0) {
       ctx.response.body = {
         succes: false,
@@ -27,7 +27,7 @@ class UserController extends Controller {
         code: 1,
       };
     } else {
-      const res = await ctx.service.post.add(userInfo);
+      const res = await ctx.service.register.add(userInfo);
       ctx.response.body = res;
     }
 
