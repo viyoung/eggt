@@ -23,8 +23,8 @@ class Register extends Controller {
         code: 1,
       };
     } else {
-      const solt = 10;
-      userInfo.password = await md5.MD5(userInfo.password, solt);
+      userInfo.password = await md5.MD5(userInfo.password);
+      console.log(userInfo);
       const res = await ctx.service.register.add(userInfo);
       ctx.response.body = res;
     }
