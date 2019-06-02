@@ -1,6 +1,7 @@
 {
   "extends": "eslint-config-egg",
-  "rules":{
-    "linebreak-style":"off"
+  "rules": {
+    "linebreak-style": "off",
+    "array-bracket-spacing": "off"
   }
 }

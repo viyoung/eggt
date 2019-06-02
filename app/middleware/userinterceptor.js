@@ -53,7 +53,7 @@ function verifyToken(token) {
   const cert = fs.readFileSync(path.join(__dirname, '../public/rsa_public_key.pem')); // 公钥
   let res = '';
   try {
-    const result = jwt.verify(token, cert, { algorithms: [ 'RS256' ] }) || {};
+    const result = jwt.verify(token, cert, { algorithms: ['RS256'] }) || {};
     const { exp, iat } = result;
     const current = Math.floor(Date.now() / 1000);
     if (current <= exp) {

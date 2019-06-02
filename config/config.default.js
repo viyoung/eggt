@@ -5,8 +5,8 @@ module.exports = appInfo => {
     // use for cookie sign key, should change to your own and keep security
     keys: appInfo.name + '_1546400957198_392',
     // add your config here
-    middleware: [ 'userInterceptor' ],
-    userInterceptor: { ignore: [ '/register', '/login' ] },
+    middleware: ['userInterceptor'],
+    userInterceptor: { ignore: ['/register', '/login'] },
     cors: {
       allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     },
@@ -14,9 +14,7 @@ module.exports = appInfo => {
     mongoose: {
       url: process.env.EGG_MONGODB_URL || 'mongodb://127.0.0.1:27017/test',
       options: {
-        server: {
-          poolSize: 20,
-        },
+        poolSize: 20,
       },
     },
     // disabled csrf
