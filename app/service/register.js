@@ -19,9 +19,9 @@ class Register extends Service {
       };
     });
   }
-  async findUserName(name) {
+  async findUser(account) {
     const ctx = this.ctx;
-    return ctx.model.User.find({ userName: name }).then(res => {
+    return ctx.model.User.find({ account }).then(res => {
       console.log(res);
       return res;
     }).catch(err => {

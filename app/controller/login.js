@@ -10,9 +10,13 @@ class Login extends Controller {
     const loginInfo = {
       account: body.account || '',
       password: body.password || '',
+      role: body.role,
     };
+    console.log(loginInfo);
     const passwordSalt = await tools.MD5(loginInfo.password);
+    console.log(passwordSalt);
     const DBUserInfo = await ctx.service.login.login(loginInfo);
+    console.log(DBUserInfo);
     if (DBUserInfo.length && DBUserInfo.length > 0) {
       console.log(DBUserInfo[0].password, passwordSalt);
       if (DBUserInfo[0].password === passwordSalt) {

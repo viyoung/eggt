@@ -6,9 +6,15 @@ module.exports = appInfo => {
     keys: appInfo.name + '_1546400957198_392',
     // add your config here
     middleware: ['userInterceptor'],
-    userInterceptor: { ignore: ['/register', '/login'] },
+    userInterceptor: {
+      match(ctx) {
+        const reg = ['/register', '/login'];
+        return reg.indexOf(ctx.request.url) !== -1;
+      },
+    },
     cors: {
       allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+      origin: ['http://localhost:3000'],
     },
     // add mongodb
     mongoose: {

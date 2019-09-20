@@ -7,19 +7,17 @@ class Register extends Controller {
     const ctx = this.ctx;
     const body = ctx.request.body;
     console.log(body);
-    const userName = body.userName;
     const account = body.account;
     const password = body.password;
     const userInfo = {
-      userName,
       account,
       password,
     };
-    const isHave = await ctx.service.register.findUserName(userInfo.userName);
+    const isHave = await ctx.service.register.findUser(userInfo.account);
     if (isHave && isHave.length > 0) {
       ctx.response.body = {
         succes: false,
-        msg: '你注册的昵称已存在',
+        msg: '你注册的账号已存在',
         code: 1,
       };
     } else {
